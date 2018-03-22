@@ -1,11 +1,11 @@
 <?php
 
-namespace kouosl\sample\models;
+namespace kouosl\watch\models;
 
 use Yii;
 
 /**
- * This is the model class for table "samples".
+ * This is the model class for table "watch".
  *
  * @property integer $id
  * @property string $title
@@ -14,7 +14,7 @@ use Yii;
  *
  * @property data[] $data
  */
-class Samples extends \yii\db\ActiveRecord
+class Watch extends \yii\db\ActiveRecord
 {
 
     /**
@@ -22,7 +22,7 @@ class Samples extends \yii\db\ActiveRecord
      */
     public static function tableName()
     {
-        return 'samples';
+        return 'watch';
     }
 
     /**
@@ -51,7 +51,7 @@ class Samples extends \yii\db\ActiveRecord
     }
 
     public function getImagePath(){
-        return sprintf("%s/samples/%s",Yii::getAlias ( '@data' ),$this->picture);
+        return sprintf("%s/watch/%s",Yii::getAlias ( '@data' ),$this->picture);
     }
 
     /**
@@ -59,6 +59,6 @@ class Samples extends \yii\db\ActiveRecord
      */
     public function getData()
     {
-        return $this->hasMany(SampleData::className(), ['sample_id' => 'id']);
+        return $this->hasMany(WatchData::className(), ['watch_id' => 'id']);
     }
 }

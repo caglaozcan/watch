@@ -1,15 +1,15 @@
 <?php
 
-namespace kouosl\sample\models;
+namespace kouosl\watch\models;
 
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
 
 /**
- * SampleSearch represents the model behind the search form about `app\modules\sample\models\Sample`.
+ * WatchSearch represents the model behind the search form about `app\modules\watch\models\Watch`.
  */
-class SamplesSearch extends Samples
+class WatchSearch extends Watch
 {
     /**
      * @inheritdoc
@@ -40,7 +40,7 @@ class SamplesSearch extends Samples
      */
     public function search($params)
     {
-        $query = Samples::find();
+        $query = Watch::find();
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,

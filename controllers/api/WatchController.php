@@ -1,13 +1,13 @@
 <?php
 
-namespace kouosl\sample\controllers\api;
+namespace kouosl\watch\controllers\api;
 
-use kouosl\sample\models\Samples;
+use kouosl\watch\models\Watch;
 use Yii;
 
-class SamplesController extends DefaultController {
+class WatchController extends DefaultController {
 	
-	public $modelClass = 'kouosl\sample\models\Samples';
+	public $modelClass = 'kouosl\watch\models\Watch';
 	
 	public function actions() {
 		$actions = parent::actions ();
@@ -17,7 +17,7 @@ class SamplesController extends DefaultController {
 	
 	public function actionView($id){
 
-		$model = Samples::findOne($id);
+		$model = Watch::findOne($id);
 		
 		if(!$model)
 			return ['status' => '404','message' => 'Not Found'];
@@ -26,14 +26,14 @@ class SamplesController extends DefaultController {
 	}
 	
 	public function actionIndex(){
-		return Samples::find()->all();
+		return Watch::find()->all();
 	}
 	
 	public function actionCreate(){
 
 		$postParams = yii::$app->request->post();
 		
-		$model = new Samples();
+		$model = new Watch();
 	
 		
 		if($model->load($postParams,'') && $model->validate()){
@@ -51,7 +51,7 @@ class SamplesController extends DefaultController {
 
 		$postParams = yii::$app->request->post();
 		
-		$model = Samples::findOne($id);
+		$model = Watch::findOne($id);
 
 		if($model = $this->LoadModel($model, $postParams)){
 				if($model->save())
@@ -64,7 +64,7 @@ class SamplesController extends DefaultController {
 	
 	public function actionDelete($id){
 		
-		if(Samples::findOne($id)->delete())
+		if(Watch::findOne($id)->delete())
 			return ['status' => 1];
 		else
 			return ['stauts' => 100];
