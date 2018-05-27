@@ -3,16 +3,16 @@
 namespace kouosl\watch\controllers\backend;
 
 use Yii;
-use kouosl\watch\models\Watch;
-use kouosl\watch\models\WatchSearch;
+use kouosl\watch\models\Tarih;
+use kouosl\watch\models\TarihSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * WatchController implements the CRUD actions for Watch model.
+ * TarihController implements the CRUD actions for Tarih model.
  */
-class WatchController extends Controller
+class TarihController extends Controller
 {
     /**
      * @inheritdoc
@@ -30,12 +30,12 @@ class WatchController extends Controller
     }
 
     /**
-     * Lists all Watch models.
+     * Lists all Tarih models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new WatchSearch();
+        $searchModel = new TarihSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -45,7 +45,7 @@ class WatchController extends Controller
     }
 
     /**
-     * Displays a single Watch model.
+     * Displays a single Tarih model.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -58,13 +58,13 @@ class WatchController extends Controller
     }
 
     /**
-     * Creates a new Watch model.
+     * Creates a new Tarih model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Watch();
+        $model = new Tarih();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -76,7 +76,7 @@ class WatchController extends Controller
     }
 
     /**
-     * Updates an existing Watch model.
+     * Updates an existing Tarih model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -96,7 +96,7 @@ class WatchController extends Controller
     }
 
     /**
-     * Deletes an existing Watch model.
+     * Deletes an existing Tarih model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -110,15 +110,15 @@ class WatchController extends Controller
     }
 
     /**
-     * Finds the Watch model based on its primary key value.
+     * Finds the Tarih model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Watch the loaded model
+     * @return Tarih the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Watch::findOne($id)) !== null) {
+        if (($model = Tarih::findOne($id)) !== null) {
             return $model;
         }
 

@@ -5,20 +5,20 @@ namespace kouosl\watch\models;
 use Yii;
 
 /**
- * This is the model class for table "watch".
+ * This is the model class for table "tarih".
  *
  * @property int $id
- * @property string $ad
- * @property string $soyad
+ * @property string $tarihsaat
+ * @property string $yer
  */
-class Watch extends \yii\db\ActiveRecord
+class Tarih extends \yii\db\ActiveRecord
 {
     /**
      * @inheritdoc
      */
     public static function tableName()
     {
-        return 'watch';
+        return 'tarih';
     }
 
     /**
@@ -27,9 +27,9 @@ class Watch extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['ad', 'soyad'], 'required'],
-            [['soyad'], 'string'],
-            [['ad'], 'string', 'max' => 200],
+            [['tarihsaat'], 'safe'],
+            [['yer'], 'required'],
+            [['yer'], 'string'],
         ];
     }
 
@@ -40,8 +40,8 @@ class Watch extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'ad' => 'Ad',
-            'soyad' => 'Soyad',
+            'tarihsaat' => 'Tarihsaat',
+            'yer' => 'Yer',
         ];
     }
 }

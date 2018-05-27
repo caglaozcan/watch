@@ -4,13 +4,13 @@ use yii\helpers\Html;
 
 
 /* @var $this yii\web\View */
-/* @var $model kouosl\watch\models\Watch */
+/* @var $model kouosl\watch\models\Tarih */
 
-$this->title = 'Create Watch';
-$this->params['breadcrumbs'][] = ['label' => 'Watches', 'url' => ['index']];
+$this->title = 'Create Tarih';
+$this->params['breadcrumbs'][] = ['label' => 'Tarihs', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="watch-create">
+<div class="tarih-create">
 
     <h1><?= Html::encode($this->title) ?></h1>
 

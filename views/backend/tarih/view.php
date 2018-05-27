@@ -4,13 +4,13 @@ use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
-/* @var $model kouosl\watch\models\Watch */
+/* @var $model kouosl\watch\models\Tarih */
 
 $this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Watches', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Tarihs', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="watch-view">
+<div class="tarih-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
@@ -29,8 +29,8 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
-            'ad',
-            'soyad:ntext',
+            'tarihsaat',
+            'yer:ntext',
         ],
     ]) ?>
 

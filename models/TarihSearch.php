@@ -5,12 +5,12 @@ namespace kouosl\watch\models;
 use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use kouosl\watch\models\Watch;
+use kouosl\watch\models\Tarih;
 
 /**
- * WatchSearch represents the model behind the search form of `kouosl\watch\models\Watch`.
+ * TarihSearch represents the model behind the search form of `kouosl\watch\models\Tarih`.
  */
-class WatchSearch extends Watch
+class TarihSearch extends Tarih
 {
     /**
      * @inheritdoc
@@ -19,7 +19,7 @@ class WatchSearch extends Watch
     {
         return [
             [['id'], 'integer'],
-            [['ad', 'soyad'], 'safe'],
+            [['tarihsaat', 'yer'], 'safe'],
         ];
     }
 
@@ -41,7 +41,7 @@ class WatchSearch extends Watch
      */
     public function search($params)
     {
-        $query = Watch::find();
+        $query = Tarih::find();
 
         // add conditions that should always apply here
 
@@ -60,10 +60,10 @@ class WatchSearch extends Watch
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
+            'tarihsaat' => $this->tarihsaat,
         ]);
 
-        $query->andFilterWhere(['like', 'ad', $this->ad])
-            ->andFilterWhere(['like', 'soyad', $this->soyad]);
+        $query->andFilterWhere(['like', 'yer', $this->yer]);
 
         return $dataProvider;
     }
